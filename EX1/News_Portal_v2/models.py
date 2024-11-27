@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 class Author(models.Model):
-    author_to_user = models.OneToOneField('User', on_delete=models.CASCADE, default=True)
+    author_to_user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
     user_rating = models.IntegerField(default=0.0)
 
     def update_rating(self):
@@ -79,3 +79,4 @@ class Comment(models.Model):
 
     sum_comment_rating_storage.append(comment_rating)
     sum_comment_to_user_rating_storage.append(comment_to_user)
+# Create your models here.

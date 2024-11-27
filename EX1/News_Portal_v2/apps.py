@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class NewsportalV1Config(AppConfig):
+class NewsPortalV2Config(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'NewsPortal_v1'
+    name = 'News_Portal_v2'
