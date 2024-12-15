@@ -1,5 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
+
+class User(AbstractUser):
+    pass
 class Author(models.Model):
     author_to_user = models.OneToOneField(User, on_delete=models.CASCADE, default=True)
     user_rating = models.IntegerField(default=0.0)
