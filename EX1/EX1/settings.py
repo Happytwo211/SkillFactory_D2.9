@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'News_Portal_v2',
+    'apptest',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'News_Portal_v2.User'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
