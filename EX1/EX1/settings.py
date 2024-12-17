@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'News_Portal_v2',
     'apptest',
+    'AppNews'
 ]
 
 MIDDLEWARE = [
