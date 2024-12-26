@@ -6,6 +6,8 @@ Products
 
 {% block content %}
    <h1>Все товары</h1>
+    <h3>{{ time_now|date:'M d Y' }}</h3>
+    <h3> {{ next_sale|default_if_none:"Чуть позже сообщим о распродаже!" }} </h3>
    <hr>
    {% if products %}
        <table>
@@ -17,10 +19,6 @@ Products
                <td>Количество</td>
            </tr>
 
-           <!-- Для каждого товара будете генерироваться новая строчка,
-           т.е. новый HTML код, который указан в теле цикла.
-           При этом сам цикл работает точно так же, как и в Python.
-           product — переменная цикла, т.е. наш товар полученный из списка -->
            {% for product in products %}
            <tr>
                <td>{{ product.description|truncatewords:2 }}</td>
