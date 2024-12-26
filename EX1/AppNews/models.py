@@ -6,7 +6,7 @@ class News(models.Model):
     news_category = models.ForeignKey('News_Category', on_delete=models.CASCADE, related_name='News')
 
     def __str__(self):
-        return f'{self.news_name.title()}: {self.news_body_text[:50]}'
+        return f'{self.news_name.title()}: {self.news_body_text[:30]}'
 
 # Create your models here.
 class News_Category(models.Model):

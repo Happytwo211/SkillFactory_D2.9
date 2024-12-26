@@ -5,7 +5,7 @@ news
 {% endblock title %}
 
 {% block content %}
-   <h1>Все товары</h1>
+   <h1>Все Новости</h1>
    <hr>
    {% if news %}
        <table>
@@ -21,7 +21,7 @@ news
            <tr>
 <!--               <td>{{ newsid.description|truncatewords:2 }}</td>-->
                <td>{{ newsid.news_name }}</td>
-               <td>{{ newsid.news_body_text }}</td>
+               <td>{{ newsid.news_body_text|truncatewords:2 }}</td>
                <td>{{ newsid.news_category }}</td>
            </tr>
            {% endfor %}
