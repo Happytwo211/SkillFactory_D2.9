@@ -1,5 +1,4 @@
 from django.urls import path
-# Импортируем созданные нами представления
 from .views import ProductsList, ProductDetail
 
 urlpatterns = [
