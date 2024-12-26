@@ -19,12 +19,7 @@ news
 
            {% for newsid in news %}
            <tr>
-               <td>{{ newsid.description|truncatewords:2 }}</td>
-
-               <!-- Не забываем, что переменные в шаблоне ничем не отличаются
-                от переменных в Python. Здесь также можно получать доступ к
-                полям объекта модели. Например, здесь мы выводим имя,
-                в следующем столбце описание, и т.д.  -->
+<!--               <td>{{ newsid.description|truncatewords:2 }}</td>-->
                <td>{{ newsid.news_name }}</td>
                <td>{{ newsid.news_body_text }}</td>
                <td>{{ newsid.news_category }}</td>
