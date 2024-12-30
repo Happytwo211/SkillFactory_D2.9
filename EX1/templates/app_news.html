@@ -6,6 +6,8 @@ news
 
 {% block content %}
    <h1>Все Новости</h1>
+    <hr>
+    <h3> Количество новостей: {{news|length}}</h3>
    <hr>
    {% if news %}
        <table>
@@ -13,6 +15,7 @@ news
                <td>Название</td>
                <td>Описание</td>
                <td>Категория</td>
+               <td>Дата публикации</td>
 
            </tr>
 
@@ -23,6 +26,7 @@ news
                <td>{{ newsid.news_name|truncatewords:2 }}</td>
                <td>{{ newsid.news_body_text|truncatewords:2 }}</td>
                <td>{{ newsid.news_category }}</td>
+               <td>{{newsid.news_publish_date|date:'M d Y' }}</td>
            </tr>
            {% endfor %}
 

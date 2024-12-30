@@ -6,7 +6,8 @@ class News(models.Model):
     news_category = models.ForeignKey('News_Category', on_delete=models.CASCADE, related_name='News')
     news_publish_date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return f'{self.news_name.title()}: {self.news_body_text[:30]}'
+        return f'{self.news_name.title()}'
+                # f'{self.news_body_text[:30]}')
     #
     # def __str__(self):
     #     return f'{self.news_publish_date}'
