@@ -1,3 +1,5 @@
+import datetime
+
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import News
@@ -12,13 +14,12 @@ class News_List(ListView):
 
 
 
+
 # Create your views here.
 class News_Detail(DetailView):
     model = News
     template_name = 'app_news_id.html'
     context_object_name = 'newsid'
-    def get_context_data(self,  **kwargs):
-        contex = super().get_context_data(**kwargs)
-        contex['publish_date'] = News.news_publish_date
-        return contex
+
+
 
