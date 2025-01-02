@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('products/', include('apptest.urls')),
     path('newstest/', include('AppNews.urls')),
+
+
+
 ]
