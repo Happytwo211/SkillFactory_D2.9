@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-
+{% load custom_filter%}
 {% block title %}
 news
 {% endblock title %}
@@ -23,8 +23,8 @@ news
            {% for newsid in news %}
            <tr>
 
-               <td>{{ newsid.news_name|truncatewords:2 }}</td>
-               <td>{{ newsid.news_body_text|truncatewords:2 }}</td>
+               <td>{{ newsid.news_name|truncatewords:2|censor_rediska}}</td>
+               <td>{{ newsid.news_body_text|truncatewords:2|censor_rediska}}</td>
                <td>{{ newsid.news_category }}</td>
                <td>{{newsid.news_publish_date|date:'M d Y' }}</td>
            </tr>

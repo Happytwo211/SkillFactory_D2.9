@@ -1,6 +1,6 @@
 
 {% extends 'flatpages/default.html' %}
-
+{%load custom_filter%}
 
 {% block title %}
 newsid
@@ -10,7 +10,7 @@ newsid
 {% block content %}
 <h1>{{ newsid }}</h1>
 <h1>{{newsid.news_publish_date}}</h1>
-<h1>{{newsid.news_body_text}}</h1>
+<h1>{{newsid.news_body_text|censor_rediska}}</h1>
 
 
 {% endblock content %}

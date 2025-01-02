@@ -1,13 +1,21 @@
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}!
+<!-- Подключаем новый файл с нашим тегом -->
+{% load custom_tags %}
+
 {% block title %}
 Products
 {% endblock title %}
 
 {% block content %}
    <h1>Все товары</h1>
-    <h3>{{ time_now|date:'M d Y' }}</h3>
-    <h3> {{ next_sale|default_if_none:"Чуть позже сообщим о распродаже!" }} </h3>
+   <!-- Вот так выглядело использование переменной и фильтра -->
+   <!-- <h3>{{ time_now|date:'M d Y' }}</h3> -->
+   <!-- А вот так мы используем наш тег-->
+   <h3>{% current_time '%b %d %Y' %}</h3>
+   <h3> {{ next_sale|default_if_none:"Чуть позже сообщим о распродаже!" }} </h3>
+
    <hr>
    {% if products %}
        <table>
@@ -21,16 +29,10 @@ Products
 
            {% for product in products %}
            <tr>
-               <td>{{ product.description|truncatewords:2 }}</td>
-
-               <!-- Не забываем, что переменные в шаблоне ничем не отличаются
-                от переменных в Python. Здесь также можно получать доступ к
-                полям объекта модели. Например, здесь мы выводим имя,
-                в следующем столбце описание, и т.д.  -->
                <td>{{ product.name }}</td>
-               <td>{{ product.description }}</td>
+               <td>{{ product.description|truncatewords:2 }}</td>
                <td>{{ product.category.name }}</td>
-               <td>{{ product.price }}</td>
+               <td>{{ product.price|currency:"usd" }}</td>
                <td>{{ product.quantity }}</td>
            </tr>
            {% endfor %}
