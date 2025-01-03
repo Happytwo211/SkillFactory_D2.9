@@ -8,7 +8,8 @@ class ProductsList(ListView):
     ordering = 'name'
     template_name = 'products.html'
     context_object_name = 'products'
-    paginate_by = 2
+    paginate_by = 1
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow()
