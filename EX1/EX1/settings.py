@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'apptest',
     'AppNews',
     'appD4',
+    'django_filters',
+
 ]
 
 MIDDLEWARE = [
